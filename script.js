@@ -6,7 +6,7 @@ button.addEventListener('click', () => {
 const li = document.createElement('li');
 li.className = 'todo-list-item';
 const deleteBtn = document.createElement('button');
-deleteBtn.innerText = "Delete";
+deleteBtn.innerText = "Done";
 li.innerText= input.value;
 list.appendChild(li);
 li.appendChild(deleteBtn);
