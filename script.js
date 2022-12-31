@@ -6,8 +6,11 @@ button.addEventListener("click", () => {
   const li = document.createElement("li");
   li.className = "todo-list-item";
   li.innerText = input.value;
+  const doneBtn = document.createElement("button");
   const deleteBtn = document.createElement("button");
-  deleteBtn.innerText = "Done";
+  doneBtn.innerText = "Done";
+  deleteBtn.innerText = "Delete";
+  li.appendChild(doneBtn);
   li.appendChild(deleteBtn);
   list.appendChild(li);
   input.value = "";
@@ -15,4 +18,9 @@ button.addEventListener("click", () => {
   deleteBtn.addEventListener("click", () => {
     list.removeChild(li);
   });
+
+  doneBtn.addEventListener("click", ()=>{
+    li.style= "text-decoration:line-through";
+  });
+
 });
