@@ -1,19 +1,18 @@
-const button = document.querySelector('.input-container button');
-const input = document.querySelector('.input-container input');
-const list = document.querySelector('.todo-list');
+const button = document.querySelector(".input-container button");
+const input = document.querySelector(".input-container input");
+const list = document.querySelector(".todo-list");
 
-button.addEventListener('click', () => {
-const li = document.createElement('li');
-li.className = 'todo-list-item';
-const deleteBtn = document.createElement('button');
-deleteBtn.innerText = "Done";
-li.innerText= input.value;
-list.appendChild(li);
-li.appendChild(deleteBtn);
-input.value='';
-deleteBtn.addEventListener('click', ()=> {
+button.addEventListener("click", () => {
+  const li = document.createElement("li");
+  li.className = "todo-list-item";
+  li.innerText = input.value;
+  const deleteBtn = document.createElement("button");
+  deleteBtn.innerText = "Done";
+  li.appendChild(deleteBtn);
+  list.appendChild(li);
+  input.value = "";
+
+  deleteBtn.addEventListener("click", () => {
     list.removeChild(li);
+  });
 });
-});
-
-
